@@ -24,7 +24,7 @@ class MakeLoginState extends State<Login>{
           title: new Text("Sign in Error"),
           content: new Text("There was an error signing in. Please try again."),
         );
-        showDialog(context: context,child: alert);
+        showDialog(context: context,builder: (context) => alert);
       }
     });
   }  
@@ -66,6 +66,7 @@ class MakeLoginState extends State<Login>{
                   children: <Widget>[
                     new TextField(
                       controller: _userController,
+                      keyboardType: TextInputType.emailAddress,
                       decoration: new InputDecoration(
                         hintText: "EMAIL",
                         icon: new Icon(Icons.email),
